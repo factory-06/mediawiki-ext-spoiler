@@ -1,0 +1,52 @@
+{
+	"name": "MW_EXT_Spoiler",
+	"version": "1.0.0",
+	"author": [
+		"[https://kitsune.solar/ Kitsune Solar]",
+		"[https://metastore.pro/ METASTORE]",
+		"..."
+	],
+	"url": "https://metastore.pro/",
+	"descriptionmsg": "mw-ext-spoiler-desc",
+	"license-name": "[https://www.gnu.org/licenses/gpl-3.0.txt GPL-3.0]",
+	"type": "parserhook",
+	"require": {
+		"MediaWiki": ">= 1.31.0",
+		"extensions": {
+			"MW_EXT_Kernel": "*"
+		}
+	},
+	"AutoloadClasses": {
+		"MediaWiki\\Extension\\MetaStore\\MW_EXT_Spoiler": "MW_EXT_Spoiler.class.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"MediaWiki\\Extension\\MetaStore\\MW_EXT_Spoiler::onParserFirstCallInit"
+		],
+		"BeforePageDisplay": [
+			"MediaWiki\\Extension\\MetaStore\\MW_EXT_Spoiler::onBeforePageDisplay"
+		]
+	},
+	"MessagesDirs": {
+		"MW_EXT_Spoiler": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.mw.spoiler.styles": {
+			"styles": [
+				"styles/theme.css"
+			],
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "MW_EXT_Spoiler/modules"
+	},
+	"manifest_version": 2
+}
